@@ -50,6 +50,7 @@ namespace Xamarin.Forms.Labs.Controls
 
             this.Element.JavaScriptLoadRequested += OnInjectRequest;
             this.Element.LoadFromContentRequested += LoadFromContent;
+            this.Element.LoadFromHtmlStringRequested += LoadFromHtmlString;
         }
 
         private void Unbind(HybridWebView oldElement)
@@ -59,6 +60,7 @@ namespace Xamarin.Forms.Labs.Controls
                 oldElement.PropertyChanged -= this.Model_PropertyChanged;
                 oldElement.JavaScriptLoadRequested -= OnInjectRequest;
                 oldElement.LoadFromContentRequested -= LoadFromContent;
+                this.Element.LoadFromHtmlStringRequested -= LoadFromHtmlString;
             }
         }
 
@@ -72,6 +74,8 @@ namespace Xamarin.Forms.Labs.Controls
         partial void Load(Uri uri);
 
         partial void LoadFromContent(object sender, string contentFullName);
+
+        partial void LoadFromHtmlString(object sender, string htmlString);
 
         private bool CheckRequest(string request)
         {

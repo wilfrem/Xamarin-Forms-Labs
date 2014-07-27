@@ -69,5 +69,10 @@ namespace Xamarin.Forms.Labs.Controls
             //string homePageUrl = NSBundle.MainBundle.BundlePath + "/" + contentFullName;
             //this.webView.LoadRequest(new NSUrlRequest(new NSUrl(homePageUrl, false)));
         }
+
+        partial void LoadFromHtmlString(object sender, string htmlString)
+        {
+            this.webView.LoadHtmlString(htmlString, NSBundle.MainBundle.BundleUrl);
+        }
     }
 }

@@ -51,6 +51,11 @@ namespace Xamarin.Forms.Labs.Controls
             this.Element.Uri = new Uri("file:///android_asset/" + contentFullName);
         }
 
+        partial void LoadFromHtmlString(object sender, string htmlString)
+        {
+            this.webView.LoadDataWithBaseURL("file:///android_asset/", htmlString, "text/html","utf8", "");
+        }
+
         private class Client : WebViewClient
         {
             private readonly WeakReference<HybridWebViewRenderer> webHybrid;
