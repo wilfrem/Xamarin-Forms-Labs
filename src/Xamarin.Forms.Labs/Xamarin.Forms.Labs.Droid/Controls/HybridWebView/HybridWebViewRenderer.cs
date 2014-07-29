@@ -54,6 +54,7 @@ namespace Xamarin.Forms.Labs.Controls
         partial void LoadFromHtmlString(object sender, string htmlString)
         {
             this.webView.LoadDataWithBaseURL("file:///android_asset/", htmlString, "text/html","utf8", "");
+            this.InjectNativeFunctionScript();
         }
 
         private class Client : WebViewClient
